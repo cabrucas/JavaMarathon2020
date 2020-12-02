@@ -1,5 +1,8 @@
 package day1;
 
+import java.io.IOException;
+import java.util.Scanner;
+
 public class Task1 {
     public static void main(String[] args) {
         int counter = 0;
