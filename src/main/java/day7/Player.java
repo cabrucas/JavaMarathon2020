@@ -9,7 +9,9 @@ public class Player {
 
     public Player(int stamina) {
         this.stamina = stamina;
-        countPlayers++;
+        if (countPlayers < 6) {
+            countPlayers++;
+        }
     }
 
     public int getStamina() {
@@ -25,8 +27,12 @@ public class Player {
         }
     }
 
+    public static int getCountPlayers() {
+        return countPlayers;
+    }
+
     public static void info() {
-        if (countPlayers < 6) {
+        if (countPlayers <= 6) {
             switch (countPlayers) {
                 case 6 :
                     System.out.println("На поле нет свободных мест");
