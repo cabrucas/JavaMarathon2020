@@ -1,33 +1,13 @@
 package day11.task2;
 
-public class Paladin extends Hero implements PhysAttack, Healer {
-    private int physAtt;
+public class Paladin extends Hero implements Healer {
     private final int TEAMMATE_HEALING_POOL = 10;
     private final int SELF_HEALING_POOL = 25;
 
     public Paladin() {
-        setHealth(100d);
         setPhysDef(0.5);
         setMagicDef(0.2);
         setPhysAtt(15);
-    }
-
-    public int getPhysAtt() {
-        return physAtt;
-    }
-
-    public void setPhysAtt(int physAtt) {
-        this.physAtt = physAtt;
-    }
-
-    @Override
-    public void physicalAttack(Hero hero) {
-        double life = hero.getHealth() - (this.getPhysAtt() * (1 - hero.getPhysDef()));
-        if (life <= 0) {
-            hero.setHealth(0);
-        } else {
-            hero.setHealth(life);
-        }
     }
 
     @Override
