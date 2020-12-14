@@ -9,14 +9,9 @@ public class Task2 {
         List<Integer> list = new ArrayList<>();
         Random random = new Random();
         while (list.size() < 10) {
-            int tmp = random.nextInt(30);
-            if (tmp % 2 == 0) {
+            int tmp = random.nextInt(350);
+            if (tmp % 2 == 0 && (tmp <= 30 || tmp >= 300)) {
                 list.add(tmp);
-            } else {
-                tmp = random.nextInt(50) + 300;
-                if (tmp % 2 == 0) {
-                    list.add(tmp);
-                }
             }
         }
         System.out.println(list);
