@@ -25,7 +25,7 @@ public class Task1 {
         for (Message message : MessageDatabase.messages) {
             System.out.println(message);
         }
-        
+
         // Тестим друзей и подписку
         one.subscribe(two);
         System.out.println(one.isSubscribed(two));
