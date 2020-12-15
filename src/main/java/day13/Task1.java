@@ -18,11 +18,19 @@ public class Task1 {
         one.sendMessage(three, "Сам попробую осилить.");
         one.sendMessage(three, "Без обид.");
         three.sendMessage(one, "Ок.");
+        three.sendMessage(three, "Тестим отправку самому себе. Если видно, то фейл.");
 
         MessageDatabase.showDialog(one,three);
 
         for (Message message : MessageDatabase.messages) {
             System.out.println(message);
         }
+        
+        // Тестим друзей и подписку
+        one.subscribe(two);
+        System.out.println(one.isSubscribed(two));
+        System.out.println(one.isFriend(two));
+        two.subscribe(one);
+        System.out.println(one.isFriend(two));
     }
 }
