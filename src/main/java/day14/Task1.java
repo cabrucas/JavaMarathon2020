@@ -22,13 +22,9 @@ public class Task1 {
                 fileContent.add(reader.readLine());
             }
             for (String tmp : fileContent) {
-                try {
-                    String[] array = tmp.split(" ");
-                    for (int i = 0; i < array.length; i++) {
-                        numList.add(Integer.parseInt(array[i]));
-                    }
-                } catch (NumberFormatException exception) {
-                    System.out.println("Не все в файле является целым числом");
+                String[] array = tmp.split(" ");
+                for (int i = 0; i < array.length; i++) {
+                    numList.add(Integer.parseInt(array[i]));
                 }
             }
             if (numList.size() != NUMBER_OF_DIGITS_IN_FILE) {
@@ -42,6 +38,8 @@ public class Task1 {
             }
         } catch (FileNotFoundException fileNotFoundException) {
             System.out.println("Файл не найден");
+        } catch (NumberFormatException numberFormatException) {
+            System.out.println("Не все в файле является целым числом");
         } catch (IOException ioException) {
             System.out.println("Некорректный входной файл");
         }
